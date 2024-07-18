@@ -9,7 +9,7 @@ import google.generativeai as genai
 api_key = "AIzaSyBepBOJ-St1LnQ2Gws8c869uNrKgJxC8tI" 
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-pro')
-input="based on the document provide a score out of 100 for the faculty, for the role of associate professor in the department of computer science and engineering"
+input="based on the document provide a score out of 100 for the faculty and an analysis of the document uploaded, for the role of associate professor in the department of computer science and engineering"
 
 def get_gemini_response(input, content):
     if input:
@@ -40,7 +40,7 @@ if uploaded_file is not None:
         st.image(image, caption="Uploaded Image.", use_column_width=True)
         content = image  # For images, we pass the image object directly
 
-submit = st.button("Gnerate Score")
+submit = st.button("Generate Score")
 
 if submit:
     response = get_gemini_response(input, content)
