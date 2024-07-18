@@ -14,7 +14,7 @@ model = genai.GenerativeModel('gemini-pro-vision')
 input="based on the provided image analyze the student's understanding level of the concept and provide two tables. the first table should display the topics in which the student is weak and needs improvement. the second table should display a 2 week study plan for the next test based on performance"
 
 def get_gemini_response(input, image):
-    if input!=:
+    if input!= "":
         response = model.generate_content([input, image])
     else:
         response = model.generate_content(image)
