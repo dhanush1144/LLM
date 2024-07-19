@@ -10,7 +10,7 @@ import google.generativeai as genai
 
 api_key = "AIzaSyBepBOJ-St1LnQ2Gws8c869uNrKgJxC8tI"  # Replace with your actual API key
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-pro-vision')
+model = genai.GenerativeModel('gemini-1.5-flash')
 input="based on the provided image analyze the student's understanding level of the concept and provide two tables. the first table should display the topics in which the student is weak and needs improvement. the second table should display a 2 week study plan for the next test based on performance"
 
 def get_gemini_response(input, image):
@@ -30,10 +30,6 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image.", use_column_width=True)
     
-    # Convert image to bytes
-    # image_bytes = io.BytesIO()
-    # image.save(image_bytes, format=image.format)
-    # image_bytes = image_bytes.getvalue()
 
 submit = st.button("Provide Study plan")
 
