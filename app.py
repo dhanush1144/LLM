@@ -13,7 +13,7 @@ def to_markdown(text):
     return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 # Directly set the API key
-api_key = "AIzaSyBepBOJ-St1LnQ2Gws8c869uNrKgJxC8tI"  # Replace with your actual API key
+api_key = " "  # Replace with your actual API key
 genai.configure(api_key=api_key)
 
 # Function to load the generative model and get responses
