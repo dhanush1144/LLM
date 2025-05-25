@@ -10,8 +10,8 @@ import google.generativeai as genai
 
 api_key = "AIzaSyBepBOJ-St1LnQ2Gws8c869uNrKgJxC8tI"  # Replace with your actual API key
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-1.5-flash')
-input="based on the provided image analyze the student's understanding level of the concept and provide two tables. the first table should display the topics in which the student is weak and needs improvement. the second table should display a 2 week study plan for the next test based on performance"
+model = genai.GenerativeModel('gemini-2.0-flash')
+input="Extract all details from each of these this bills such as bill number ,date, sender address, receiver address, items, price, quantity, and all other details and display them as a table and put it into a downloadable csv file also provide the link to download that file"
 
 def get_gemini_response(input, image):
     if input!= "":
@@ -22,7 +22,7 @@ def get_gemini_response(input, image):
     
 
 st.set_page_config(page_title="Performance Analysis")
-st.header("Panimalar Analysis platform")
+st.header("Bill Analyzer")
 # input = st.text_input("Input Prompt: ", key="input")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
