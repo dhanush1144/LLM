@@ -11,7 +11,7 @@ import google.generativeai as genai
 api_key = "AIzaSyBepBOJ-St1LnQ2Gws8c869uNrKgJxC8tI"  # Replace with your actual API key
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-2.0-flash')
-input="Extract all details from each of these this bills such as bill number ,date, sender address, receiver address, items, price, quantity, and all other details and display them as a table and provide data in csv format which can then be saved with .csv extension"
+input="Extract all details from each of these this bills such as bill number ,date, sender address, receiver address, items, price, quantity, and all other details and display them as a table..also provide data in csv format which can then be saved with .csv extension"
 
 def get_gemini_response(input, image):
     if input!= "":
